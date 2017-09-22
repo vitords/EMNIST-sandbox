@@ -5,7 +5,7 @@ from mnist import MNIST
 from keras.utils import np_utils
 
 
-def load_data(path):
+def load_data(path, ):
     """Load data from the EMNIST dataset.
 
     All the data files should be using the original file names as given by
@@ -39,6 +39,15 @@ def load_data(path):
     X_test = np.array(X_test)
     y_test = np.array(y_test)
 
+    X_train = normalize(X_train)
+    X_test = normalize(X_test)
+
+    X_train = reshape_for_cnn(X_train)
+    X_test = reshape_for_cnn(X_test)
+
+    y_train = preprocess_labels(y_train, len(mapping))
+    y_test = preprocess_labels(y_test, len(mapping))
+
     return X_train, y_train, X_test, y_test, mapping
 
 
@@ -58,7 +67,7 @@ def normalize(array):
     return array
 
 
-def reshape_for_cnn(array, color_channels, img_width, img_height):
+def reshape_for_cnn(array, color_channels=1, img_width=28, img_height=28):
     """Reshape the image data to be used in a Convolutional Neural Network.
 
     Args:
