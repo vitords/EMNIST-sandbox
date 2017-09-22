@@ -12,7 +12,7 @@
 
 ## EMNIST dataset
 
-Download the binary [b]ByClass[/b] dataset from https://www.nist.gov/itl/iad/image-group/emnist-dataset and extract it to `EMNIST-sandbox/data/`. The directory structure should look like this:
+Download the binary **ByClass** dataset from https://www.nist.gov/itl/iad/image-group/emnist-dataset and extract it to `EMNIST-sandbox/data/`. The directory structure should look like this:
 ```
    EMNIST-sandbox/
       data/
